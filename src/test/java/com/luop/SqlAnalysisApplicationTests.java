@@ -19,7 +19,7 @@ class SqlAnalysisApplicationTests {
                 "from user u left join department d on u.depId = d.id where u.id = 1";
         try {
             Map<String, Set<String>> map = SelectParseHelper.getBloodRelationResult(sql);
-            System.out.println(map);   //{depId=[department.id], userName=[user.name], userId=[user.id], depName=[department.name]}
+            System.out.println(map);   //{depId=[department.id], userName=[user.name], id=[user.id], depName=[department.name]}
         } catch (Exception e) {
             e.printStackTrace();
         }
