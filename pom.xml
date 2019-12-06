@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.luop</groupId>
-    <artifactId>sql_analysis</artifactId>
+    <artifactId>sql-blood-analysis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sql_analysis</name>
+    <name>sql-blood-analysis</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,6 +19,14 @@
     </properties>
 
     <dependencies>
+
+        <!--jsqlparser依赖-->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
