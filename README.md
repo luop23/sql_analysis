@@ -4,7 +4,7 @@
 工具说明：
 -
     1、本工具只解析select语句
-    2、支持子查询
+    2、支持子查询和union查询
     3、支持常用数据库的常用函数，如concat、case when、nvl、isnull、cast、ifnull等等
     4、工具可能对某些sql无法解析，有待完善
     

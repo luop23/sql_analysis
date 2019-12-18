@@ -138,20 +138,21 @@ public class MySelectVisitor implements SelectVisitor {
         String name = fromItem.getName();  //表名
         String databaseName = fromItem.getDatabase().getDatabaseName();   //数据库名
         String schemaName = fromItem.getSchemaName();    //表空间名
-        if (!Objects.isNull(databaseName) && !Objects.isNull(schemaName))
-            return databaseName + "." + schemaName + "." + name;
         if (Objects.isNull(databaseName) && !Objects.isNull(schemaName))
             return schemaName + "." + name;
+        if (!Objects.isNull(databaseName)) {
+            return databaseName + "." + (schemaName == null ? "" : schemaName) + "." + name;
+        }
         return name;
     }
 
     @Override
     public void visit(SetOperationList sOperationList) {
         //union all会用到
-//        List<PlainSelect> pSelects = sOperationList.getPlainSelects();
-//        for (PlainSelect pSelect : pSelects) {
-//            this.visit(pSelect);
-//        }
+        List<PlainSelect> pSelects = sOperationList.getPlainSelects();
+        for (PlainSelect pSelect : pSelects) {
+            this.visit(pSelect);
+        }
     }
 
     @Override
